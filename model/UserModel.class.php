@@ -4,6 +4,7 @@
 		public $mysqli;
 		function __construct() {
 			$this->mysqli = new mysqli("127.0.0.1","root","","ztstu");
+			$this->mysqli->query('set names utf8');
 		}
 
 		function addUser($name , $age, $password) {
