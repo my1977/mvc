@@ -1,5 +1,5 @@
 <?php
-	class UserController extends Contrller {
+	class UserController {
 		public function add() {
 			include "./view/user/add.html";
 		}
@@ -29,8 +29,22 @@
 		}
 
 		public function lists() {
+			if (!isset($_SESSION['me']['id']) || $_SESSION['me']['id'] <= 0) {
+				die('please login');
+			}
 			$userModel = new UserModel();
 			$data = $userModel->getUserLists();
 			include "./view/user/lists.html";
+		}
+
+		public function setSession() {
+			session_start();
+			$_SESSION['a'] = '1111';
+			$_SESSION['b'] = '222';
+			
+		}
+		public function getSession() {
+			var_dump($_SESSION);
+		
 		}
 	}

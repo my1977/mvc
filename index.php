@@ -3,7 +3,7 @@
 	//获取控制器名 方法名
 	$controller = isset($_GET['c']) ? $_GET['c'] : 'User';
 	$action 	= isset($_GET['a']) ? $_GET['a'] : 'add';
-
+	session_start();
 	//自动加载
 	function __autoload($class) {
 		if (strpos($class, "Controller") !== false) {

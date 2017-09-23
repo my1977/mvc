@@ -19,4 +19,11 @@
 			$data = $res->fetch_all(MYSQL_ASSOC);
 			return $data;
 		}
+
+		function getUserInfoByName($name) {
+			$sql = "select * from user where name = '{$name}'";
+			$res = $this->mysqli->query($sql);
+			$data = $res->fetch_all(MYSQL_ASSOC);
+			return $data[0];
+		}
 	}
