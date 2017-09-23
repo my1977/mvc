@@ -17,7 +17,7 @@
 	}
 
 	//拼类名
-	$className = "{$controller}Controller";  //UserController
+	$className = "{$controller}Controller";  //UserController 控制器
 
 	//实例化并调用
 	$con = new $className();
