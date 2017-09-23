@@ -1,5 +1,5 @@
 <?php
-	class UserController {
+	class UserController extends Contrller {
 		public function add() {
 			include "./view/user/add.html";
 		}
