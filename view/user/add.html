@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 </head>
 <body>
+<h1>你好 <?php echo $_SESSION['me']['name']; ?> </h1>
 <h1>添加</h1>
 <form  action="index.php?c=User&a=doAdd" method="post">
 	姓名： <input type="text" name="username"><br>

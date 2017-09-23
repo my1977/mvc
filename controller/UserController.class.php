@@ -32,6 +32,7 @@
 			if (!isset($_SESSION['me']['id']) || $_SESSION['me']['id'] <= 0) {
 				die('please login');
 			}
+			echo '你好 '.$_SESSION['me']['name'];
 			$userModel = new UserModel();
 			$data = $userModel->getUserLists();
 			include "./view/user/lists.html";
