@@ -18,6 +18,7 @@
 				die();
 			} else {
 				header('Refresh:3,Url=index.php?c=Blog&a=lists');
+				//header('Location:index.php?c=Blog&a=lists');
 				echo '登录不成功';
 				die();
 			}
