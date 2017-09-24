@@ -1,5 +1,5 @@
 <?php
-	class UserModel {
+	class BlogModel {
 
 		public $mysqli;
 		function __construct() {
@@ -7,23 +7,17 @@
 			$this->mysqli->query('set names utf8');
 		}
 
-		function addUser($name , $age, $password) {
-			$sql = "insert into user(name,age,password) value ('{$name}', {$age}, '{$password}')";
+		function addBlog($user_id, $content) {
+			$sql = "insert into blog(content,user_id) value ('{$content}', {$user_id})";
 			$res = $this->mysqli->query($sql);
 			return $res;
 		}
 
-		function getUserLists() {
-			$sql = "select * from user";
+		function getBlogLists() {
+			$sql = "select * from blog";
 			$res = $this->mysqli->query($sql);
 			$data = $res->fetch_all(MYSQL_ASSOC);
 			return $data;
-		}
-		function getUserInfoById($id) {
-			$sql = "select * from user where id = {$id}";
-			$res = $this->mysqli->query($sql);
-			$data = $res->fetch_all(MYSQL_ASSOC);
-			return $data[0];
 		}
 
 		function getUserInfoByName($name) {

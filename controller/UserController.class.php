@@ -30,6 +30,7 @@
 
 		public function lists() {
 			if (!isset($_SESSION['me']['id']) || $_SESSION['me']['id'] <= 0) {
+				header('Refresh:3,Url=index.php?c=UserCenter&a=login');
 				die('please login');
 			}
 			echo '你好 '.$_SESSION['me']['name'];
