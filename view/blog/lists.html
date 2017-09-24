@@ -6,6 +6,7 @@
 		body {width:1000px;margin: 0 auto}
 		table {margin:0 auto;}
 		td {width:100px;text-align:center;}
+		li {display:inline-block;border:1px solid #ccc;padding:10px;}
 	</style>
 	<meta charset="utf-8">
 </head>
@@ -31,6 +32,16 @@
 	</tr>
 	<?php } ?>
 </table>
+<div>
+	<ul>
+		<?php for($i=1;$i<=$allPage;$i++) { ?>
+		<li><a href="index.php?c=Blog&a=lists&p=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+		<?php } ?>
+		<!-- <li><a href="index.php?c=Blog&a=lists&p=2">2</a></li>
+		<li><a href="index.php?c=Blog&a=lists&p=3">3</a></li>
+		<li><a href="index.php?c=Blog&a=lists&p=4">4</a></li> -->
+	</ul>
+</div>
 <a href="index.php?c=Blog&a=add">发段子</a>
 </body>
 </html>

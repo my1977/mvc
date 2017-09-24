@@ -13,17 +13,18 @@
 			return $res;
 		}
 
-		function getBlogLists() {
-			$sql = "select * from blog";
+		function getBlogLists($offset=0, $limit=20) {
+			$sql = "select * from blog limit {$offset},{$limit}";
+			//select * from blog limit 10,10
 			$res = $this->mysqli->query($sql);
 			$data = $res->fetch_all(MYSQL_ASSOC);
 			return $data;
 		}
 
-		function getUserInfoByName($name) {
-			$sql = "select * from user where name = '{$name}'";
+		function getBlogCount () {
+			$sql = "select count(*) as num from blog";
 			$res = $this->mysqli->query($sql);
 			$data = $res->fetch_all(MYSQL_ASSOC);
-			return $data[0];
+			return $data[0]['num'];
 		}
 	}

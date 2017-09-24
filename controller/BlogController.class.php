@@ -24,9 +24,25 @@
 		}
 
 		public function lists() {
+
+/*
+	get p 当前第几页
+	每页显示的个数  $pageNum =  3; 
+	通过 p + pageNum  求偏移量  
+	获取列表的方法支持 offset  limit 
+
+	获取总条数 / pageNum ceil 向上取整 为了页面中显示页码
+ */
 			$blogModel = new BlogModel();
 			$userModel = new UserModel();
-			$data = $blogModel->getBlogLists();
+
+			$p = isset($_GET['p']) ? $_GET['p'] : 1;
+			$pageNum =  3; 
+			$offset = ($p - 1) * $pageNum;
+			$count = $blogModel->getBlogCount();
+			$allPage = ceil($count/$pageNum);
+			
+			$data = $blogModel->getBlogLists($offset, $pageNum);
 
 			// foreach ($data as $key => &$value) {
 			// 	$user_info = $userModel->getUserInfoById($value['user_id']);
