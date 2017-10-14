@@ -23,16 +23,31 @@
 			}
 		}
 
+		public function image () {
+			include "./view/blog/image.html";
+		}
+
+		public function doImage() {
+			include "./library/Upload.class.php";
+			$upload = new Upload();
+			$filename = $upload->run('photo');
+			echo $filename;
+			echo $upload->returnSize();
+			// echo "<pre>";
+			// var_dump($_FILES);
+			// echo "</pre>";
+		}
+
 		public function lists() {
 
-/*
-	get p 当前第几页
-	每页显示的个数  $pageNum =  3; 
-	通过 p + pageNum  求偏移量  
-	获取列表的方法支持 offset  limit 
+			/*
+				get p 当前第几页
+				每页显示的个数  $pageNum =  3; 
+				通过 p + pageNum  求偏移量  
+				获取列表的方法支持 offset  limit 
 
-	获取总条数 / pageNum ceil 向上取整 为了页面中显示页码
- */
+				获取总条数 / pageNum ceil 向上取整 为了页面中显示页码
+			 */
 			$blogModel = new BlogModel();
 			$userModel = new UserModel();
 

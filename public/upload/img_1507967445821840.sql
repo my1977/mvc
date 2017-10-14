@@ -1,0 +1,10 @@
+INSERT INTO `ci_lessons` (`name`,`level`,`lesson`,`type`,`question_flag`,`level_id`,`lesson_id`,`status`,`createtime`) VALUES ('level0_lesson_6','0','6','1','1','1','1','1','2017-07-28 16:48:15');
+INSERT INTO `ci_lessons` (`name`,`level`,`lesson`,`type`,`question_flag`,`level_id`,`lesson_id`,`status`,`createtime`) VALUES ('level0_lesson_6','0','6','2','1','1','1','1','2017-07-28 16:48:15');
+INSERT INTO `ci_lessons` (`name`,`level`,`lesson`,`type`,`question_flag`,`level_id`,`lesson_id`,`status`,`createtime`) VALUES ('level0_lesson_7','0','7','1','1','1','1','1','2017-07-28 16:48:15');
+INSERT INTO `ci_lessons` (`name`,`level`,`lesson`,`type`,`question_flag`,`level_id`,`lesson_id`,`status`,`createtime`) VALUES ('level0_lesson_7','0','7','2','1','1','1','1','2017-07-28 16:48:15');
+INSERT INTO `ci_lessons` (`name`,`level`,`lesson`,`type`,`question_flag`,`level_id`,`lesson_id`,`status`,`createtime`) VALUES ('level0_lesson_8','0','8','1','1','1','1','1','2017-07-28 16:48:15');
+INSERT INTO `ci_lessons` (`name`,`level`,`lesson`,`type`,`question_flag`,`level_id`,`lesson_id`,`status`,`createtime`) VALUES ('level0_lesson_8','0','8','2','1','1','1','1','2017-07-28 16:48:15');
+INSERT INTO `ci_lessons` (`name`,`level`,`lesson`,`type`,`question_flag`,`level_id`,`lesson_id`,`status`,`createtime`) VALUES ('level0_lesson_9','0','9','1','1','1','1','1','2017-07-28 16:48:15');
+INSERT INTO `ci_lessons` (`name`,`level`,`lesson`,`type`,`question_flag`,`level_id`,`lesson_id`,`status`,`createtime`) VALUES ('level0_lesson_9','0','9','2','1','1','1','1','2017-07-28 16:48:15');
+INSERT INTO `ci_lessons` (`name`,`level`,`lesson`,`type`,`question_flag`,`level_id`,`lesson_id`,`status`,`createtime`) VALUES ('level0_lesson_10','0','10','1','1','1','1','1','2017-07-28 16:48:15');
+INSERT INTO `ci_lessons` (`name`,`level`,`lesson`,`type`,`question_flag`,`level_id`,`lesson_id`,`status`,`createtime`) VALUES ('level0_lesson_10','0','10','2','1','1','1','1','2017-07-28 16:48:15');
