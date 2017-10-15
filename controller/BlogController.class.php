@@ -10,8 +10,9 @@
 		}
 
 		public function doAdd() {
-			include "./library/Upload.class.php";
-			$upload = new Upload();
+			// include "./library/Upload.class.php";
+			// $upload = new Upload();
+			$upload = L("Upload");
 			$filename = $upload->run('image');
 			$content = $_POST['content'];
 			$user_id = $_SESSION['me']['id'];

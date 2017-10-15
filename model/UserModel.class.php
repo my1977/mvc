@@ -23,7 +23,7 @@
 			$sql = "select * from user where id = {$id}";
 			$res = $this->mysqli->query($sql);
 			$data = $res->fetch_all(MYSQL_ASSOC);
-			return $data[0];
+			return isset($data[0]) ? $data[0] : array();
 		}
 
 		function getUserInfoByName($name) {

@@ -4,17 +4,9 @@
 	$controller = isset($_GET['c']) ? $_GET['c'] : 'Blog';
 	$action 	= isset($_GET['a']) ? $_GET['a'] : 'lists';
 	session_start();
-	//自动加载
-	function __autoload($class) {
-		if (strpos($class, "Controller") !== false) {
-			$dir = 'controller';
-		} elseif (strpos($class, "Model") !== false) {
-			$dir = 'model';
-		} else {
-			die($class."not exist");
-		}
-		include "./{$dir}/{$class}.class.php";
-	}
+	include "./common/function.php";
+
+	
 
 	//拼类名
 	$className = "{$controller}Controller";  //UserController 控制器
