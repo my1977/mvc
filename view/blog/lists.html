@@ -22,6 +22,7 @@
 		<td>id</td>
 		<td>content</td>
 		<td>user_id</td>
+		<td>image</td>
 	</tr>
 
 	<?php foreach($data as $key=>$value) { ?>
@@ -29,6 +30,7 @@
 		<td><?php echo $value['id']; ?></td>
 		<td><?php echo mb_substr($value['content'], 0, 19,'utf8'); ?></td>
 		<td><?php echo $value['user_name']; ?></td>
+		<td><img src="<?php echo $value['image']; ?>" width="100" height="auto"></td>
 	</tr>
 	<?php } ?>
 </table>

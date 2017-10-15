@@ -10,11 +10,14 @@
 		}
 
 		public function doAdd() {
+			include "./library/Upload.class.php";
+			$upload = new Upload();
+			$filename = $upload->run('image');
 			$content = $_POST['content'];
 			$user_id = $_SESSION['me']['id'];
 
 			$blogModel = new BlogModel();
-			$status = $blogModel->addBlog($user_id, $content);
+			$status = $blogModel->addBlog($user_id, $content, $filename);
 
 			if ($status) {
 				header('Refresh:1,Url=index.php?c=Blog&a=lists');

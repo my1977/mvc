@@ -3,6 +3,7 @@
 		private $ext;
 		private $fileInfo;
 		public function run($name) {
+			$path = "./public/upload/";
 			$this->fileInfo = $_FILES[$name];
 			if (!$this->checkType($_FILES[$name]["type"])) {
 				return 'type error';
@@ -11,8 +12,9 @@
 				return 'size error';
 			}
 			$ext = $this->getExt($_FILES[$name]["name"]);
-			$fileName = 'img_'.time().rand(1,1000000) . $ext;			
-			move_uploaded_file($_FILES[$name]["tmp_name"], "./public/upload/" . $fileName);
+			$fileName = 'img_'.time().rand(1,1000000) . $ext;	
+			$fileName = $path . $fileName;		
+			move_uploaded_file($_FILES[$name]["tmp_name"], $fileName);
 			return $fileName;
 		}
 
