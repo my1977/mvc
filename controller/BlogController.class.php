@@ -6,19 +6,29 @@
 			if (!isset($_SESSION['me']) || $_SESSION['me']['id'] <=0) {
 				header('Location:index.php?c=UserCenter&a=login');
 			}
+			$classifyModel = new ClassifyModel();
+			$classify = $classifyModel->getLists();
 			include "./view/blog/add.html";
 		}
 
 		public function doAdd() {
-			// include "./library/Upload.class.php";
-			// $upload = new Upload();
 			$upload = L("Upload");
 			$filename = $upload->run('image');
 			$content = $_POST['content'];
 			$user_id = $_SESSION['me']['id'];
+			$classify = $_POST['classify'];
+			$title = $_POST['title'];
+
+			$data = array(
+				'user_id' 	=> $user_id,
+				'content' 	=> $content,
+				'classify' 	=> $classify,
+				'title' 	=> $title,
+				'image' 	=> $filename,
+				);
 
 			$blogModel = new BlogModel();
-			$status = $blogModel->addBlog($user_id, $content, $filename);
+			$status = $blogModel->addBlog($data);
 
 			if ($status) {
 				header('Refresh:1,Url=index.php?c=Blog&a=lists');

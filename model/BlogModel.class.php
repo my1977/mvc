@@ -7,14 +7,15 @@
 			$this->mysqli->query('set names utf8');
 		}
 
-		function addBlog($user_id, $content, $image='') {
-			$sql = "insert into blog(content,user_id,image) value ('{$content}', {$user_id}, '{$image}')";
+		function addBlog($data) {
+			$time = time();
+			$sql = "insert into blog(content,user_id,image,title,classify_id,createtime) value ('{$data['content']}', {$data['user_id']}, '{$data['image']}','{$data['title']}', '{$data['classify']}',{$time})";
 			$res = $this->mysqli->query($sql);
 			return $res;
 		}
 
 		function getBlogLists($offset=0, $limit=20) {
-			$sql = "select id,content,user_id,image from blog limit {$offset},{$limit}";
+			$sql = "select * from blog limit {$offset},{$limit}";
 			//select * from blog limit 10,10
 			$res = $this->mysqli->query($sql);
 			$data = $res->fetch_all(MYSQL_ASSOC);
