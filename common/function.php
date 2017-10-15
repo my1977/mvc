@@ -4,11 +4,11 @@
 		echo '123';
 	}
 
-	//$name = "Upload";
+	//实例化library
 	function L ($name) {
 		include "./library/{$name}.class.php";
-		$upload = new $name();
-		return $upload;
+		$obj = new $name();
+		return $obj;
 	}
 
 	//自动加载
@@ -21,4 +21,16 @@
 			die($class."not exist");
 		}
 		include "./{$dir}/{$class}.class.php";
+	}
+
+	//生成验证码随机数
+	function getRandom($len) {
+		$base = "1234567890abcdef";
+		$max = strlen($base);
+		mt_srand();
+		$res = '';
+		for($i=0;$i<$len;$i++) {
+			$res .= $base[mt_rand(0,$max-1)];
+		}
+		return $res;
 	}

@@ -8,7 +8,6 @@ function random($len) {
     for ($i = 0; $i < $len; $i++) {
         $strs .= $srcstr[mt_rand(0, 30)];
     }
-    //var_dump($strs);die();
     return $strs;
 }
  
@@ -35,29 +34,40 @@ $pix  = imagecolorallocate($im, 187, 230, 247);
  
 //字体色
 $font = imagecolorallocate($im, 41, 163, 238);
+
+ 
+//red
+//$red = imagecolorallocate($im, 255, 0, 0);
+
+$w   = imagecolorallocate($im, 255, 255, 255);
+$red = imagecolorallocate($im, 255, 0, 0);
  
 //绘模糊作用的点
-mt_srand();
-for ($i = 0; $i < 1000; $i++) {
-    imagesetpixel($im, mt_rand(0, $width), mt_rand(0, $height), $pix);
-}
- 
+// mt_srand();
+// for ($i = 0; $i < 1000; $i++) {
+//     imagesetpixel($im, mt_rand(0, $width), mt_rand(0, $height), $pix);
+// }
 //输出字符
 imagestring($im, 5, 7, 5, $str, $font);
  
 //输出矩形
-imagerectangle($im, 0, 0, $width -1, $height -1, $font);
+imagerectangle($im, 0, 0, $width -1, $height -1, $red);
+
+//虚线
+$style = array($red, $red, $font, $red, $red, $w, $back, $w, $w, $back);
+imagesetstyle($im, $style);
+imageline($im , 2,2, 48, 2 , IMG_COLOR_STYLED);
  
 //输出图片
 imagepng($im);
  
 imagedestroy($im);
  
-$str = md5($str);
+//$str = md5($str);
  
 //选择 cookie
 //SetCookie("verification", $str, time() + 7200, "/");
  
 //选择 Session
-$_SESSION["verification"] = $str;
+//$_SESSION["verification"] = $str;
 ?>
