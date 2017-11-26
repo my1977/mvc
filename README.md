@@ -3,6 +3,13 @@
 # 控制器 UserController.class.php
 # 模型 UserModel.class.php
 # 视图 前段写得html  add.html
+
+``` 
+{
+  "data" : [
+  ]
+}
+``` 
 mvc
 	index.php
 	controller
